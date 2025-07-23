@@ -20,9 +20,6 @@ var exp = (function() {
         color_2: ['<span style="color: #00aa00; font-weight: bold">green</span>', '<span style="color: #1067e8; font-weight: bold">blue</span>'][1 - colorOrder],
     };
 
-    console.log(settings.pM);
-
-
     settings.tileHit_1 = `<div class="outcome-container">
                             <div class="header">{header}</div>
                             <div class="box" style="background-color:${settings.hex_1}"></div>

@@ -241,8 +241,6 @@ const dmPsych = (function() {
 
     const latency = dmPsych.makeRT(nTrials, pM, roundLength, gameType);
 
-    console.log(latency);
-
     let winArray = makeFeedbackArray();
     let lossArray = makeFeedbackArray();
 
