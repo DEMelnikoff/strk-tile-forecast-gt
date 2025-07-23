@@ -416,7 +416,7 @@ const dmPsych = (function() {
             if (blockName !== "practice") {
               (feedbackType == "plus") ? totalTokens += (finalStreak*10 + 5) : (feedbackType == "minus") ? totalTokens += (finalStreak*10 - 5) : totalTokens += (finalStreak*10);
             };    
-          } else if (!tooSlow && streak == 20) {
+          } else if (!tooSlow && streak >= 20) {
             let feedbackType = null;
             message = (feedbackType == "plus" && blockName !== "practice") ? noTokens_bonus_html : (feedbackType == "minus" && blockName !== "practice") ? noTokens_loss_html : noTokens_html;
             message = (blockName !== "practice") ? message.replace("{strk-feedback}", `+0 Points`) : message.replace("{strk-feedback}", `Final Streak: 0`); 
