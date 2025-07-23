@@ -13,16 +13,10 @@ const dmPsych = (function() {
   window.jsPsych = initJsPsych({
     on_finish: () => {
       let boot = jsPsych.data.get().last(1).select('boot').values[0];
-      let totalTokens_1_array = jsPsych.data.get().filter({round: 1}).select('totalTokens').values;
-      let totalTokens_1 = totalTokens_1_array[totalTokens_1_array.length - 1];
-      let totalTokens_2_array = jsPsych.data.get().filter({round: 2}).select('totalTokens').values;
-      let totalTokens_2 = totalTokens_2_array[totalTokens_2_array.length - 1];
-      let totalTokens = totalTokens_1 + totalTokens_2;
       if(!boot) {
         document.body.innerHTML = 
         `<div align='center' style="margin: 10%">
           <p>Thank you for participating!</p>
-          <p>In total, you won <b>${totalTokens}</b> tokens! Within one week, you'll find out if you won the $100.00 bonus.</p>
           <p><b>To receive payment, please wait to be re-directed to Prolific.</b></p>
         </div>`;
         setTimeout(() => { location.href = `https://app.prolific.co/submissions/complete?cc=${completionCode}` }, 4000);
